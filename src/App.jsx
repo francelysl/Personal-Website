@@ -12,7 +12,6 @@ function App() {
       <Navbar />
       <main>
         <Home />
-        <About />
         <Projects />
         <Contact />
       </main>
