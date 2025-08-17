@@ -16,5 +16,8 @@
     "bugs": {
         "url": "https://github.com/francelysl/Personal-Website/issues"
     },
-    "homepage": "https://github.com/francelysl/Personal-Website#readme"
+    "homepage": "https://github.com/francelysl/Personal-Website#readme",
+    "dependencies": {
+        "react-scripts": "^5.0.1"
+    }
 }
