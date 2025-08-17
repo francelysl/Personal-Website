@@ -1,0 +1,33 @@
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* full viewport height */
+    background: #f9f9f9;
+  }
+  
+  .icon-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .icon-menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #e6e6e6;
+    color: #111;
+    font-size: 32px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .icon-menu a:hover {
+    background: #d4d4d4;
+    transform: scale(1.05);
+  }
+  
