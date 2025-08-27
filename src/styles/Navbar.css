@@ -1,4 +1,6 @@
 html { scroll-behavior: smooth; }
+body { margin: 0; overflow-x: hidden; }  
+*, *::before, *::after { box-sizing: border-box; }
 
 .navbar {
   position: sticky;
@@ -10,47 +12,56 @@ html { scroll-behavior: smooth; }
 }
 
 .nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 14px 20px;
+  margin: 0;
+  width:100%;
+  padding-block: 12px;
+  padding-inline: clamp(16px, 4vw, 32px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: clamp(8px, 2vw, 16px);
 }
 
-/* Brand — Apple Garamond Light like the specimen */
+
 .brand {
   font-family: "AppleGaramond","EB Garamond",Garamond,Georgia,serif;
   font-weight: 300;                 /* Light */
-  font-variant-ligatures: common-ligatures;
-  font-variant-numeric: oldstyle-nums;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-
   color: #111;
   text-decoration: none;
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.15rem);
   letter-spacing: 0.01em;
   line-height: 1;
+
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.15rem);
+  flex: 1 1 auto;        
+  min-width: 0;            
+  max-width: 50vw;      
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;   
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 22px;
+  justify-content: flex-end;
+  gap: clamp(8px, 3vw, 22px);
   margin: 0;
   padding: 0;
+  flex: 0 1 55vw; 
+  min-width: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #222;
   font-weight: 500;
-  font-size: .95rem;
+  font-size: clamp(0.78rem, 1.2vw + 0.6rem, 0.95rem);
   padding: 6px 4px;
   border-radius: 8px;
   transition: color .14s ease, background .14s ease, transform .14s ease;
+  white-space: nowrap;
 }
 .nav-links a:hover { color:#000; background:#f1f1f1; transform: translateY(-1px); }
 
@@ -60,3 +71,10 @@ html { scroll-behavior: smooth; }
   .brand { font-size: 1rem; }
   .nav-links a { font-size: .9rem; }
 }
+
+@media (max-width: 360px) {
+    .brand { font-size: 0.95rem; }
+    .nav-links { gap: 8px; }
+    .nav-links a { font-size: 0.8rem; padding: 4px 2px; }
+  }
+  
