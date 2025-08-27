@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/francelysl/Personal-Website/issues"
   },
-  "homepage": "https://github.com/francelysl/Personal-Website#readme",
+  "homepage": ".",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "react": "^19.1.1",
