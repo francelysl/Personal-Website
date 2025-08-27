@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "AppleGaramond";
+  src: local("Apple Garamond Light"),
+       local("AppleGaramond-Light"),
+       local("AGaramond-Light");
+  font-weight: 300;     
+  font-style: normal;
+  font-display: swap;
+}

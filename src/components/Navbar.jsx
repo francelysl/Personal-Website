@@ -1,15 +1,19 @@
 import React from "react";
+import "../styles/Navbar.css";
 
-function Navbar() {
+export default function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <header className="navbar">
+      <div className="nav-inner">
+        <a href="#home" className="brand">francelys lomeli</a>
+        <nav aria-label="Primary">
+          <ul className="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
   );
 }
-
-export default Navbar;

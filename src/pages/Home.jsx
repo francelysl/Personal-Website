@@ -3,10 +3,10 @@ import SocialIcons from "../components/SocialIcons";
 
 export default function Home() {
   return (
-    <div>
+    <section id="home">
       <h1>Welcome to My Portfolio</h1>
       <p>...</p>
       <SocialIcons />
-    </div>
+    </section>
   );
 }
