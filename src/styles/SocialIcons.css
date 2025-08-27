@@ -1,30 +1,37 @@
 .social-container {
-    position: fixed; 
-    top: 50%; 
-    left: 20px;
-    transform: translateY(-50%); 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 1000; 
-  }
-  
-  .icon-menu a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #e6e6e6;
-    color: #111;
-    font-size: 28px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  .icon-menu a:hover {
-    background: #d4d4d4;
-    transform: scale(1.1);
-  }
-  
+  position: fixed;
+  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index: 99999;
+}
+
+.icon-menu {
+  display: flex;
+  flex-direction: column; 
+  gap: 14px;
+}
+
+.icon-menu a {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #e9e9e9;
+  color: #111;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.icon-menu a:hover {
+  transform: translateY(-2px) scale(1.06);
+  background: #dedede;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 420px) {
+  .social-container { right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+  .icon-menu a { width: 48px; height: 48px; font-size: 20px; }
+}
