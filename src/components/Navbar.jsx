@@ -1,19 +1,19 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 export default function Navbar() {
   return (
     <header className="navbar">
       <div className="nav-inner">
-        <a href="#home" className="brand">francelys lomeli</a>
+        <Link to="/" className="brand">francelys lomeli</Link>
         <nav aria-label="Primary">
           <ul className="nav-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><Link to="/">HOME</Link></li>
+            <li><Link to="/#about">ABOUT</Link></li>
+            <li><Link to="/contact#contact">CONTACT</Link></li>
           </ul>
         </nav>
       </div>
-  </header>
+    </header>
   );
 }
