@@ -1,0 +1,154 @@
+:root {
+    --card-bg: #ffffff;
+    --text-900: #111827;   /* near-neutral-900 */
+    --text-500: #6b7280;   /* near-neutral-500 */
+    --border:   #e5e7eb;   /* near-neutral-300 */
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+    --radius-xl: 16px;
+    --radius-logo: 14px;
+  }
+  
+  /* wrapper spacing */
+  .edu-wrap {
+    display: grid;
+    gap: 12px;
+  }
+  
+  /* small rounded chip like the screenshot label */
+  .edu-chip {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    background: #fff;
+  }
+  
+  /* the dashed, rounded card */
+  .edu-card {
+    background: var(--card-bg);
+    border: 1.5px dashed var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    transition: box-shadow 160ms ease, transform 160ms ease;
+    cursor: pointer;
+  }
+  
+  /* hover effect like subtle elevation */
+  .edu-card:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.06);
+  }
+  
+  /* main row */
+  .edu-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .edu-row { padding: 20px 24px; }
+  }
+  
+  /* logo box */
+  .edu-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-logo);
+    overflow: hidden;
+    background: #f5f5f5;
+    border: 1px solid #eaeaea;
+    flex: 0 0 auto;
+  }
+  .edu-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* text stack */
+  .edu-main {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .edu-title {
+    color: var(--text-900);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .edu-subtitle {
+    margin-top: 4px;
+    color: var(--text-500);
+    font-size: 1.1rem;
+  }
+  
+  /* right side: dates + chevron */
+  .edu-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-500);
+    flex: 0 0 auto;
+  }
+  .edu-dates {
+    white-space: nowrap;
+    font-size: 1.05rem;
+  }
+  .edu-caret {
+    transition: transform 200ms ease;
+  }
+  .edu-caret.rot { transform: rotate(180deg); }
+  
+  /* dropdown animation (height transition) */
+  .edu-drop {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease;
+  }
+  .edu-drop.open {
+    grid-template-rows: 1fr;
+  }
+  .edu-drop-inner {
+    overflow: hidden;
+    border-top: 1px solid #e5e7eb;
+    padding: 14px 20px;
+  }
+  @media (min-width: 768px) {
+    .edu-drop-inner { padding: 16px 24px; }
+  }
+  
+  /* content blocks inside dropdown */
+  .edu-block + .edu-block {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #ececec;
+  }
+  .edu-block-title {
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .edu-list {
+    margin: 8px 0 0;
+    padding-left: 1.25rem;
+    color: #374151;
+  }
+  .edu-list li {
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .edu-text {
+    margin-top: 8px;
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
