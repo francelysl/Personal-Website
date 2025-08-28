@@ -177,3 +177,10 @@
   display: grid;
   gap: 12px;
 }
+.edu-card {
+  background: #fff;
+  border: 1.5px dashed #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden; 
+  transition: box-shadow 0.2s ease;
+}
