@@ -3,6 +3,7 @@ import AboutMe from "../components/AboutMe";
 import TechStack from "../components/TechStack";
 import SocialIcons from "../components/SocialIcons";
 import EducationItem from "../components/EducationItem";
+import Footer from "../components/Footer";
 
 import "../styles/EducationItem.css";
 
@@ -54,6 +55,7 @@ export default function Home() {
       />
       <SocialIcons />
       <EducationItem />
+      <Footer />
     </section>
   );
 }
