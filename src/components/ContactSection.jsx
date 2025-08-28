@@ -84,6 +84,7 @@ export default function ContactSection() {
 
   return (
     <section className="contact-wrap" id="contact">
+      <p> Feel free to reach out, open to discussing new opportunities and ideas.</p>
       {/* Social icons row */}
       <div className="social-row">
         {items.map((item) => (

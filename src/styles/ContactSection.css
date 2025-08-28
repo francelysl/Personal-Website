@@ -10,6 +10,11 @@
     --accent: #111111; /* submit button */
   }
   
+  p{
+    display: flex;
+    justify-content: center;
+  }
+  
   .contact-wrap{
     max-width: 760px;
     margin: 0 auto;

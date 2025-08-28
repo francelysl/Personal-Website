@@ -1,28 +1,36 @@
-.stack-wrap{
-    max-width: 1000px;        
-    margin: 0 auto;           
-    padding: 16px 12px;
-  
+.tech-stack {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 16px;
     display: grid;
-    gap: 16px 20px;
-  
-    grid-template-columns: repeat(4, minmax(140px, max-content));
-    justify-content: center;   
-    justify-items: center;      
+    gap: 32px;
   }
   
- 
-  @media (max-width: 1024px){
-    .stack-wrap{ grid-template-columns: repeat(3, minmax(140px, max-content)); }
-  }
-  @media (max-width: 720px){
-    .stack-wrap{ grid-template-columns: repeat(2, minmax(140px, max-content)); }
-  }
-  @media (max-width: 420px){
-    .stack-wrap{ grid-template-columns: repeat(1, minmax(140px, max-content)); }
+  /* Each section is like a card */
+  .stack-section {
+    background: #fff;
+    border: 1px solid #e5e7eb;     /* light border */
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    padding: 20px;
   }
   
-  .stack{
+  .stack-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 16px;
+  }
+  
+  /* Grid of pills */
+  .stack-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+    justify-items: center;
+  }
+  
+  .stack {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -39,20 +47,22 @@
     transition: background .15s ease, color .15s ease, transform .15s ease;
   }
   
-  .stack:hover{
+  .stack:hover {
     background: #111;
     color: #fff;
     transform: translateY(-1px);
   }
-
-  .stack:focus-visible{
+  .stack:focus-visible {
     outline: 3px solid rgba(17,17,17,.25);
     outline-offset: 2px;
   }
   
-  @media (max-width: 420px){
-    .stack{ padding: 7px 14px; font-size: 11px; letter-spacing: 0.16em; }
+  /* responsive tweaks */
+  @media (max-width: 640px) {
+    .stack-wrap { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    .stack { font-size: 11px; padding: 8px 12px; letter-spacing: 0.14em; }
   }
+  
 
   /* Resume Button Styling*/
   .resume-btn {
