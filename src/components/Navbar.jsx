@@ -9,7 +9,7 @@ export default function Navbar() {
         <nav aria-label="Primary">
           <ul className="nav-links">
             <li><Link to="/">HOME</Link></li>
-            <li><Link to="/#about">ABOUT</Link></li>
+            <li><Link to="/#projects">PROJECTS</Link></li>
             <li><Link to="/contact#contact">CONTACT</Link></li>
           </ul>
         </nav>
