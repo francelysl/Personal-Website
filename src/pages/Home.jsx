@@ -13,12 +13,11 @@ export default function Home() {
   return (
     <section id="home" style={{ padding: "32px 0" }}>
 
-
- <div className="innovate-deliver-section">
-        <h2 className="imagine-innovate-deliver">Imagine</h2>
-        <h2 className="imagine-innovate-deliver">Innovate</h2>
-        <h2 className="imagine-innovate-deliver">Deliver</h2>
-      </div>
+<div className="innovate-deliver-section">
+  <h2 data-frame data-magnet className="imagine-innovate-deliver">Imagine</h2>
+  <h2 data-frame data-magnet className="imagine-innovate-deliver">Innovate</h2>
+  <h2 data-frame data-magnet className="imagine-innovate-deliver">Deliver</h2>
+</div>
       
       <AboutMe />
       <a
