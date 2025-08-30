@@ -6,6 +6,7 @@ import EducationItem from "../components/EducationItem";
 import Footer from "../components/Footer";
 
 import "../styles/EducationItem.css";
+import Certifications from "../components/Certifications";
 
 
 export default function Home() {
@@ -44,6 +45,7 @@ export default function Home() {
 
       <h2 className="about-label">Tech Stack</h2>
       <TechStack />
+      <Certifications/>
       <SocialIcons />
       <EducationItem />
       <Footer />
