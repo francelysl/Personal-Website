@@ -1,13 +1,8 @@
 
 
-
-
-/* TechStack.css — white UI with light shadows */
-
 /* Section */
 .tech-stack { padding: 32px 0 8px; }
 
-/* a11y helper */
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px;
   padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0);
@@ -16,48 +11,44 @@
 
 /* ---------- Tabs (chips) ---------- */
 .tabbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-  justify-content: center;
+  display: flex; flex-wrap: wrap; gap: 14px;
+  align-items: center; justify-content: center;
   margin-bottom: 16px;
 }
 
 .chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-flex; align-items: center; gap: 10px;
   padding: 12px 18px;
   border-radius: 16px;
-  background: #fff;                          /* white pill */
-  border: 1px solid #eaedf1;                 /* very light border */
-  color: #111;
-  box-shadow: 0 6px 14px rgba(17,24,39,0.06),/* light airy shadow */
+  background: #fff;
+  border: 1px solid #eaedf1;                
+  color: #374151;                        
+  box-shadow: 0 6px 14px rgba(17,24,39,0.06),
               0 1px 2px rgba(17,24,39,0.04);
-  cursor: pointer;
-  font-weight: 600;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+  cursor: pointer; font-weight: 600;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease;
 }
-.chip-ico { font-size: 18px; color: #3b82f6; }
+
+.chip-ico { font-size: 18px; color: #9ca3af; }  
+
 .chip:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(17,24,39,0.07), 0 2px 4px rgba(17,24,39,0.05);
 }
+
 .chip.active {
-  background: #fff;                          /* keep white like picture */
-  border-color: #dbeafe;                     /* soft blue ring */
-  color: #1d4ed8;
-  box-shadow: 0 8px 24px rgba(37,99,235,0.08),  /* subtle blue-ish lift */
+  background: #fff;                          
+  border-color: #e5e7eb;                     
+  box-shadow: 0 8px 24px rgba(17,24,39,0.06),
               0 2px 6px rgba(17,24,39,0.04);
 }
 
 /* ---------- Card with skills ---------- */
 .skills-card {
-  background: #fff;                          /* white card */
-  border: 1px solid #eef1f5;                 /* hairline border */
+  background: #fff;
+  border: 1px solid #eef1f5;
   border-radius: 18px;
-  box-shadow: 0 18px 36px rgba(17,24,39,0.06),/* light shadow like screenshot */
+  box-shadow: 0 18px 36px rgba(17,24,39,0.06),
               0 2px 6px rgba(17,24,39,0.04);
   padding: 18px;
   max-width: 1100px;
@@ -69,38 +60,28 @@
   grid-template-columns: 1fr 1fr;
   gap: 22px 40px;
 }
+.col { display: grid; gap: 18px; }
 
-.col { display: grid; gap: 22px; }
 
-/* skill row */
-.skill-top { display: flex; align-items: baseline; justify-content: space-between; }
-.skill-name { margin: 0; font-size: 1.15rem; font-weight: 700; color: #0b1220; }
-.skill-pct  { color: #6b7280; font-weight: 700; }
+.skill { padding: 12px 2px 14px; border-bottom: 1px solid #eef1f5; }
+.col .skill:last-child { border-bottom: 0; }
 
-.skill-note { margin-top: 4px; color: #6b7280; font-size: .95rem; }
-
-/* progress bar */
-.bar {
-  --pct: 0%;
-  position: relative;
-  height: 8px;
-  border-radius: 999px;
-  background: #e5e7eb;                       /* light grey track */
-  overflow: hidden;
-  margin-top: 10px;
+.skill-name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b1220;
 }
-.bar::before {
-  content: "";
-  position: absolute; inset: 0;
-  width: 0%;
-  background: #2563eb;                       /* blue fill */
-  transition: width 900ms ease;
-}
-.skills-grid.animate .bar::before { width: var(--pct); }
 
-/* subtle entrance for each skill */
+.skill-note {
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: .95rem;
+}
+
+/* Row entrance animation */
 @keyframes card-pop { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform:none; } }
-.skills-grid.animate .skill { animation: card-pop .38s ease both; }
+.skills-grid.animate .skill { animation: card-pop .34s ease both; }
 .skills-grid.animate .skill:nth-child(1) { animation-delay: .02s; }
 .skills-grid.animate .skill:nth-child(2) { animation-delay: .05s; }
 .skills-grid.animate .skill:nth-child(3) { animation-delay: .08s; }
@@ -110,7 +91,8 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .skills-grid { grid-template-columns: 1fr; gap: 18px; }
+  .skills-grid { grid-template-columns: 1fr; gap: 12px; }
+  .col { gap: 12px; }
 }
 
   /* Resume Button Styling*/
