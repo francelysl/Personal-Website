@@ -113,24 +113,6 @@
   .skills-grid { grid-template-columns: 1fr; gap: 18px; }
 }
 
-/* Optional dark mode (keeps light look in light mode) */
-@media (prefers-color-scheme: dark) {
-  .chip { background: #0f1115; border-color: #1f2937; color: #f5f5f5; box-shadow: none; }
-  .chip.active { background: #0f1115; border-color: #334155; color: #93c5fd; }
-  .skills-card { background: #0f1115; border-color: #1f2937; box-shadow: none; }
-  .skill-name { color: #f5f5f5; }
-  .skill-note, .skill-pct { color: #a7abb1; }
-  .bar { background: #1f2937; }
-  .bar::before { background: #3b82f6; }
-}
-
-
-
-
-
-
-
-
   /* Resume Button Styling*/
   .resume-btn {
     display: inline-flex;
