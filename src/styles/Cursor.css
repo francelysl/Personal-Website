@@ -1,0 +1,50 @@
+/* Hide default cursor on fine pointers only, keep text caret on touch devices */
+@media (pointer: fine) {
+    .use-custom-cursor, .use-custom-cursor * { cursor: none !important; }
+  }
+  
+  /* Grey iOS-like ball */
+  .ball {
+    position: fixed;
+    left: -12px;            /* offset so translate lands at pointer center */
+    top: -12px;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: #d9d9de;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.7),
+      0 6px 16px rgba(0,0,0,.12);
+    transform: translate3d(-100px,-100px,0);
+    pointer-events: none;
+    z-index: 99999;
+    transition: background .18s ease, box-shadow .18s ease, transform .06s linear;
+    will-change: transform;
+  }
+  
+  /* Hovering links/buttons = slightly larger */
+  .ball.is-link { transform: translate3d(-100px,-100px,0) scale(1.25); }
+  
+  /* Near a magnet target */
+  .ball.is-magnet {
+    background: #cfd1d6;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.8),
+      0 10px 22px rgba(0,0,0,.16);
+  }
+  
+  /* Magnetized word feedback (optional) */
+  [data-magnet] {
+    transition: text-shadow .18s ease, transform .18s ease;
+  }
+  [data-magnet].is-near {
+    text-shadow: 0 6px 18px rgba(0,0,0,.08);
+    transform: translateY(-1px);
+  }
+  
+  /* Accessibility: respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ball { display: none; }
+    .use-custom-cursor, .use-custom-cursor * { cursor: auto !important; }
+  }
+  
