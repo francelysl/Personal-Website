@@ -1,68 +1,135 @@
-.tech-stack {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 16px;
-    display: grid;
-    gap: 32px;
-  }
-  
-  /* Each section is like a card */
-  .stack-section {
-    background: #fff;
-    border: 1px solid #e5e7eb;     /* light border */
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    padding: 20px;
-  }
-  
-  .stack-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #111;
-    margin-bottom: 16px;
-  }
-  
-  /* Grid of pills */
-  .stack-wrap {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 16px;
-    justify-items: center;
-  }
-  
-  .stack {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #111;
-    color: #111;
-    background: #fff;
-    border-radius: 999px;
-    padding: 10px 16px;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    line-height: 1;
-    user-select: none;
-    transition: background .15s ease, color .15s ease, transform .15s ease;
-  }
-  
-  .stack:hover {
-    background: #111;
-    color: #fff;
-    transform: translateY(-1px);
-  }
-  .stack:focus-visible {
-    outline: 3px solid rgba(17,17,17,.25);
-    outline-offset: 2px;
-  }
-  
-  /* responsive tweaks */
-  @media (max-width: 640px) {
-    .stack-wrap { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
-    .stack { font-size: 11px; padding: 8px 12px; letter-spacing: 0.14em; }
-  }
-  
+
+
+
+
+/* TechStack.css — white UI with light shadows */
+
+/* Section */
+.tech-stack { padding: 32px 0 8px; }
+
+/* a11y helper */
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* ---------- Tabs (chips) ---------- */
+.tabbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: #fff;                          /* white pill */
+  border: 1px solid #eaedf1;                 /* very light border */
+  color: #111;
+  box-shadow: 0 6px 14px rgba(17,24,39,0.06),/* light airy shadow */
+              0 1px 2px rgba(17,24,39,0.04);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+}
+.chip-ico { font-size: 18px; color: #3b82f6; }
+.chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(17,24,39,0.07), 0 2px 4px rgba(17,24,39,0.05);
+}
+.chip.active {
+  background: #fff;                          /* keep white like picture */
+  border-color: #dbeafe;                     /* soft blue ring */
+  color: #1d4ed8;
+  box-shadow: 0 8px 24px rgba(37,99,235,0.08),  /* subtle blue-ish lift */
+              0 2px 6px rgba(17,24,39,0.04);
+}
+
+/* ---------- Card with skills ---------- */
+.skills-card {
+  background: #fff;                          /* white card */
+  border: 1px solid #eef1f5;                 /* hairline border */
+  border-radius: 18px;
+  box-shadow: 0 18px 36px rgba(17,24,39,0.06),/* light shadow like screenshot */
+              0 2px 6px rgba(17,24,39,0.04);
+  padding: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 40px;
+}
+
+.col { display: grid; gap: 22px; }
+
+/* skill row */
+.skill-top { display: flex; align-items: baseline; justify-content: space-between; }
+.skill-name { margin: 0; font-size: 1.15rem; font-weight: 700; color: #0b1220; }
+.skill-pct  { color: #6b7280; font-weight: 700; }
+
+.skill-note { margin-top: 4px; color: #6b7280; font-size: .95rem; }
+
+/* progress bar */
+.bar {
+  --pct: 0%;
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;                       /* light grey track */
+  overflow: hidden;
+  margin-top: 10px;
+}
+.bar::before {
+  content: "";
+  position: absolute; inset: 0;
+  width: 0%;
+  background: #2563eb;                       /* blue fill */
+  transition: width 900ms ease;
+}
+.skills-grid.animate .bar::before { width: var(--pct); }
+
+/* subtle entrance for each skill */
+@keyframes card-pop { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform:none; } }
+.skills-grid.animate .skill { animation: card-pop .38s ease both; }
+.skills-grid.animate .skill:nth-child(1) { animation-delay: .02s; }
+.skills-grid.animate .skill:nth-child(2) { animation-delay: .05s; }
+.skills-grid.animate .skill:nth-child(3) { animation-delay: .08s; }
+.skills-grid.animate .skill:nth-child(4) { animation-delay: .11s; }
+.skills-grid.animate .skill:nth-child(5) { animation-delay: .14s; }
+.skills-grid.animate .skill:nth-child(6) { animation-delay: .17s; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .skills-grid { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* Optional dark mode (keeps light look in light mode) */
+@media (prefers-color-scheme: dark) {
+  .chip { background: #0f1115; border-color: #1f2937; color: #f5f5f5; box-shadow: none; }
+  .chip.active { background: #0f1115; border-color: #334155; color: #93c5fd; }
+  .skills-card { background: #0f1115; border-color: #1f2937; box-shadow: none; }
+  .skill-name { color: #f5f5f5; }
+  .skill-note, .skill-pct { color: #a7abb1; }
+  .bar { background: #1f2937; }
+  .bar::before { background: #3b82f6; }
+}
+
+
+
+
+
+
+
 
   /* Resume Button Styling*/
   .resume-btn {

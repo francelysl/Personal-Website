@@ -43,24 +43,7 @@ export default function Home() {
 </a>
 
       <h2 className="about-label">Tech Stack</h2>
-      <TechStack
-        skills={[
-          "JavaScript",
-          "Java",
-          "C++",
-          "TypeScript",
-          "React",
-          "Next.js",
-          "Node.js",
-          "Express",
-          "Python",
-          "AWS",
-          "PostgreSQL",
-          "MongoDB",
-          "Docker",
-          "Git",
-        ]}
-      />
+      <TechStack />
       <SocialIcons />
       <EducationItem />
       <Footer />
