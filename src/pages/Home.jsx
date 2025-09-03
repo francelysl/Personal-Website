@@ -8,7 +8,6 @@ import Footer from "../components/Footer";
 import "../styles/EducationItem.css";
 import Certifications from "../components/Certifications";
 
-
 export default function Home() {
   return (
     <section id="home" style={{ padding: "32px 0" }}>
