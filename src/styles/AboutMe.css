@@ -1,71 +1,99 @@
-:root {
-    --text-900: #0b0b0b;
-    --text-700: #33363a;
-    --maxw: 1200px;
-    --gutterX: clamp(24px, 6vw, 80px);
-  }
-  
-  @font-face {
-    font-family: "InterVarLocal";
-    src: local("Inter"), local("Inter Regular");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  .about-wrap {
-    display: block;
-    margin: 0 auto;
-    max-width: var(--maxw);
-    padding: clamp(28px, 6vw, 64px) var(--gutterX);
-    background: #fff;
-  }
-  
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /* left label / right text */
-    align-items: start;
-    gap: clamp(16px, 6vw, 120px);
-  }
-  
+/* Section spacing */
+.hero { padding: clamp(24px, 6vw, 64px) 0; }
 
-  .about-label {
-    margin: 0;
-    color: var(--text-900);
-    font-weight: 800;
-    letter-spacing: .02em;
-    line-height: 1.1;
- 
-    font-family: -apple-system, "SF Pro Display", "SF Pro Text",
-      system-ui, "Segoe UI", Roboto, "InterVarLocal", Inter, Arial, sans-serif;
-    font-size: clamp(18px, 2.2vw, 28px);
-  }
-  
 
-  .about-content {
-    max-width: 64ch; 
-    color: var(--text-700);
-    font-family: -apple-system, "SF Pro Text", "SF Pro Display",
-      system-ui, "Segoe UI", Roboto, "InterVarLocal", Inter, Arial, sans-serif;
-    font-size: clamp(16px, 1.6vw, 22px);
-    line-height: 1.7;
-  }
-  
-  .about-content p {
-    margin: 0 0 clamp(14px, 3.2vw, 28px);
-  }
-  
+/* Two-column layout like the screenshot */
+.hero-inner {
+ display: grid;
+ grid-template-columns: minmax(0, 1fr) 480px;
+ gap: clamp(24px, 4vw, 48px);
+ align-items: center;
+ max-width: 1100px;
+ margin: 0 auto;
+}
 
-  @media (max-width: 820px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    .about-label {
-      font-size: clamp(18px, 5vw, 26px);
-    }
-    .about-content {
-      font-size: clamp(16px, 4.2vw, 20px);
-    }
-  }
-  
+
+/* Left column */
+.hero-title {
+ margin: 0 0 12px;
+ font-weight: 800;
+ color: #0b1220;
+ line-height: 1.1;
+ font-size: clamp(1.8rem, 3.8vw, 3rem);
+}
+
+
+.hero-lead {
+ margin: 0 0 10px;
+ color: #4b5563;
+ font-size: clamp(1rem, 1.3vw, 1.1rem);
+ line-height: 1.75;
+}
+.hero-body {
+ margin-top: 6px;
+ color: #4b5563;
+ font-size: 1rem;
+ line-height: 1.75;
+}
+
+
+/* Right card (background swapped to #F2F2F2) */
+.hero-card {
+ background: #F2F2F2;
+ border: 1px solid #eef1f5;
+ border-radius: 28px;
+ padding: clamp(24px, 4vw, 48px);
+ text-align: center;
+ box-shadow: 0 18px 36px rgba(17,24,39,0.06), 0 2px 6px rgba(17,24,39,0.04);
+}
+
+
+/* Square avatar with initials */
+.avatar {
+ width: 88px;
+ height: 88px;
+ margin: 0 auto 18px;
+ border-radius: 20px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ font-weight: 800;
+ font-size: 32px;
+ background: #8F969C;
+ box-shadow: 0 12px 30px rgba(37,99,235,.25);
+}
+
+
+.hero-name {
+ font-weight: 800;
+ color: #0b1220;
+ font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+}
+
+
+/* Blue link subtitle like the screenshot */
+.hero-role {
+ display: inline-block;
+ margin-top: 8px;
+ font-weight: 700;
+ text-decoration: none;
+}
+
+
+
+
+.hero-location {
+ margin-top: 6px;
+ color: #6b7280;
+ font-weight: 600;
+}
+
+
+/* Responsive: stack columns */
+@media (max-width: 900px) {
+ .hero-inner { grid-template-columns: 1fr; }
+ .hero-card { order: 2; }
+}
+
+
