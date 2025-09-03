@@ -1,0 +1,100 @@
+/* ===== Section ===== */
+.exp-wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 16px 24px;
+  }
+  .exp-heading{
+    margin: 0 0 10px;
+    text-align: center;
+    font-weight: 800;
+    color: #0b1220;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+  }
+   .mui-timeline{ padding: 0; }
+ 
+ 
+  /* Content column */
+  .tl-content{ padding: 12px 0; }
+   /* ===== Card (force visible) ===== */
+  .exp-card{
+    /* force visible in case old reveal CSS is still loaded */
+    opacity: 1 !important;
+    transform: none !important;
+     background: #fff;
+    border: 1px solid #eef1f5;
+    border-radius: 20px;
+    padding: clamp(18px, 2.6vw, 28px);
+    box-shadow: 0 22px 40px rgba(17,24,39,0.06), 0 2px 6px rgba(17,24,39,0.04);
+    text-align: left;
+  }
+   /* Header: title + date pill */
+  .exp-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .exp-title{
+    margin: 0;
+    font-weight: 800;
+    color: #0b1220;
+    font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  }
+  .exp-date{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #eef2f7;
+    color: #374151;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .exp-date i{ font-size: 16px; color: #6b7280; }
+   /* Company + location */
+  .exp-company{
+    margin: 0 0 10px;
+    font-weight: 800;
+    color: #1f2937;
+    font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+  }
+  .exp-loc{ color: #6b7280; font-weight: 700; }
+   /* Description */
+  .exp-desc{
+    margin: 0 0 14px;
+    color: #4b5563;
+    line-height: 1.75;
+    font-size: clamp(1rem, 1.6vw, 1.1rem);
+  }
+   /* Tech chips */
+  .exp-tags{
+    display: flex; flex-wrap: wrap;
+    gap: 10px 12px;
+    margin: 0; padding: 0; list-style: none;
+  }
+  .tag{
+    display: inline-flex; align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #eaf1ff;
+    color: #1d4ed8;
+    font-weight: 700; font-size: .95rem;
+  }
+   /* ===== Timeline visuals (always visible) ===== */
+  .tl-dot{
+    background: #2563eb;
+    box-shadow: 0 6px 16px rgba(37,99,235,.28);
+  }
+  .tl-connector{
+    background: #e5e7eb;
+    width: 2px;
+  }
+   /* ===== Responsive ===== */
+  @media (max-width: 640px){
+    .exp-row{ align-items: flex-start; }
+    .exp-date{ padding: 8px 12px; font-size: .95rem; }
+  }
+ 
